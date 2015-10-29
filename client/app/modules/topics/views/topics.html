@@ -1,0 +1,34 @@
+<h2>Témata</h2>
+<ul>
+    <p ng-show="dataLoadingg">nevim</p>
+    <li ng-repeat="topic in topics"><a href="#/topic/{{topic.id}}">{{ topic.name}}</a></li>
+</ul>
+<div>
+    <uib-accordion>
+        <uib-accordion-group heading="Nové téma">
+            <form novalidate name="newTopicForm" ng-submit="save(newTopicName)">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label>Název</label>
+                        <input required isunique ng-minlength=2 ng-maxlength=50 type="text" placeholder="Název tématu" name="topicName" ng-model="newTopicName"/><br />
+                        <div class="formError" ng-show="newTopicForm.topicName.$dirty && newTopicForm.topicName.$invalid">
+                            <small class="formError" ng-show="newTopicForm.topicName.$error.required">
+                                Název je povinný.
+                            </small>
+                            <small class="formError" ng-show="newTopicForm.topicName.$error.minlength">
+                                Název musí mít alespon 2 znaky.
+                            </small>
+                            <small class="formError" ng-show="newTopicForm.topicName.$error.maxlength">
+                                Název nesmí být delší než 50 znaků.
+                            </small>
+                            <small class="formError" ng-show="newTopicForm.topicName.$error.isunique">
+                                Takové téma již exituje.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" ng-disabled="newTopicForm.$invalid" value="Odeslat" />
+            </form>
+        </uib-accordion-group>
+    </uib-accordion>
+</div>

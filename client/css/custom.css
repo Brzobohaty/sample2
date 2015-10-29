@@ -1,0 +1,49 @@
+/* app css stylesheet */
+
+body {
+    padding-top: 40px;
+}
+
+.main.ng-leave         {
+    -webkit-transform-origin: 0% 0%;
+	-webkit-animation: slideOutLeft 1s both ease-in;
+	-moz-transform-origin: 0% 0%;
+	-moz-animation: slideOutLeft 1s both ease-in;
+	transform-origin: 0% 0%;
+	animation: slideOutLeft 1s both ease-in;
+}
+
+.main.ng-enter 		{  
+    -webkit-animation:slideInRight 1s both ease-in;
+	-moz-animation:slideInRight 1s both ease-in;
+	animation:slideInRight 1s both ease-in;    
+}
+
+.formError{
+    color: darkred;
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+	from 	{ transform:translateX(100%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+	from 	{ -moz-transform:translateX(100%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+	from 	{ -webkit-transform:translateX(100%); }
+	to 		{ -webkit-transform: translateX(0); }
+}
+
+/* slide in from the left */
+@keyframes slideOutLeft {
+	to 		{ transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {	
+	to 		{ -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+	to 		{ -webkit-transform: translateX(-100%); }
+}

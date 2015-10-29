@@ -1,0 +1,17 @@
+<h2>{{topic.topic_name}}</h2>
+<div class="post" ng-repeat="post in topic.posts">
+    <h3>Předmět: {{ post.subject}}</h3>
+    <h4>Autor: {{ post.user_name}}</h4>
+    <p>{{ post.content}}</p>
+</div>
+<div>
+    <uib-accordion>
+        <uib-accordion-group heading="Nový příspěvek">
+            <form novalidate>
+                <input required type="text" name="postSubject" placeholder="Předmět příspěvku" ng-model="newPost.subject"/><br />
+                <textarea required name="postContent" placeholder="Obsah příspěvku" ng-model="newPost.content"></textarea><br />
+                <input type="submit" ng-click="save(newPost)" value="Odeslat" />
+            </form>
+        </uib-accordion-group>
+    </uib-accordion>
+</div>

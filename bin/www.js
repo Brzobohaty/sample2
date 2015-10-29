@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('sample:server');
+var app = require('../server/app.js');
+var debug = require('../server/node_modules/debug')('sample:server');
 var http = require('http');
 var fs = require('fs');
 
